@@ -73,14 +73,27 @@ app.controller('mainController', function($scope, $http, $route, $location) {
     }
   }
   init();
-  $scope.allowupload = true;
+  $scope.allowUploadPrompt = true;
   $scope.uploadimg = () => {
   document.getElementById('imgupload').click();
   }
   $scope.imgupload_src = "";
   $scope.SelectFile = function (e) {
-  $scope.allowupload=false;
+  $scope.allowUploadPrompt=false;
   $scope.imgupload_src = URL.createObjectURL(e.target.files[0]);
   $scope.$digest();
+  }
+  $scope.choice = "";
+  $scope.allowDraw = true;
+  $scope.allowUpload = false;
+  $scope.updateChoice = () => {
+    if($scope.choice === "draw"){
+      $scope.allowUpload = false;
+      $scope.allowDraw = true;
+    }
+    if($scope.choice === "upload"){
+      $scope.allowDraw = false;
+      $scope.allowUpload = true;
+    }
   }
 })

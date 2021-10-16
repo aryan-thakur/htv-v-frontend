@@ -24,7 +24,7 @@ h1{
   color: rgba(203, 209, 209, 0.97);
   letter-spacing: 15px;
 }
-#choice{
+.choice{
   width: 100%;
   display: flex;
   flex-direction:row;
@@ -32,6 +32,7 @@ h1{
   margin-top: 48px;
 }
 canvas{
+  display: block;
   border: 3px solid snow;
 }
 button{
@@ -47,6 +48,7 @@ button{
   flex-direction:row;
   justify-content: space-around;
   margin-top: 24px;
+  margin-bottom: 72px;
 }
 #uploadClick{
   display: flex;
@@ -55,13 +57,14 @@ button{
   align-items: center;
   width: 500px;
   height: 500px;
-  border: 6px solid rgba(93, 77, 84,0.7);
+  border: 6px solid rgba(215, 230, 218, 0.6);
+  margin-bottom: 72px;
 }
 #uploadClick > p{
     display: block;
     margin: 0 auto;
     width: 75%;
-    color: rgb(93, 77, 84);
+    color: rgba(215, 230, 218, 0.9);
     margin: 10px;
     font-size: 48px;
     text-align: center;
@@ -75,4 +78,38 @@ img{
 }
 #img-wrapper{
   width: 500px;
+}
+input[type='radio'] {
+  cursor: pointer;
+  -webkit-appearance:none;
+  width:20px;
+  height:20px;
+  border:1px solid darkgray;
+  border-radius:50%;
+  outline:none;
+  box-shadow:0 0 5px 0px gray inset;
+}
+input[type='radio']:hover {
+  box-shadow:0 0 5px 0px orange inset;
+}
+
+input[type='radio']:before {
+  content:'';
+  display:block;
+  width:60%;
+  height:60%;
+  margin: 20% auto;
+  border-radius:50%;
+}
+input[type='radio']:checked:before {
+  background: rgb(238, 232, 222);
+}
+label{
+font-family: Quicksand, monospace;
+font-size: 20px;
+margin-left: 10px;
+margin-bottom: 10px;
+}
+#choice-wrapper{
+  margin-top: 54px;
 }
